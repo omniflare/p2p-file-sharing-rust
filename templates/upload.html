@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a File - WebSocket File Transfer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Send a File</h1>
+            <p>Drag and drop a file to share it</p>
+        </header>
+        
+        <div id="drop-area" class="drop-area">
+            <p>Drop your file here or</p>
+            <input type="file" id="file-input" hidden>
+            <label for="file-input" class="btn btn-outline">Select a file</label>
+            <p id="file-name" class="file-name"></p>
+        </div>
+        
+        <div id="share-link-container" class="share-link-container hidden">
+            <h3>Share this link with the recipient</h3>
+            <div class="link-box">
+                <input type="text" id="share-link" readonly>
+                <button id="copy-link" class="btn btn-small">Copy</button>
+            </div>
+            <p id="link-info">This link will be valid until you close this page</p>
+        </div>
+        
+        <div id="transfer-status" class="transfer-status hidden">
+            <h3>Transfer Status</h3>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="status-text">Waiting for recipient to connect...</p>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/" class="btn btn-text">Back to Home</a>
+        </div>
+    </div>
+    
+    <script src="/static/upload.js"></script>
+</body>
+</html>

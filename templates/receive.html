@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Receive File - WebSocket File Transfer</title>
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Receive File</h1>
+                <p>Someone wants to share a file with you</p>
+            </header>
+
+            <div class="file-info">
+                <h3>File Details</h3>
+                <div class="file-detail">
+                    <span>Name:</span>
+                    <span id="file-name">{{FILE_NAME}}</span>
+                </div>
+                <div class="file-detail">
+                    <span>Size:</span>
+                    <span id="file-size">{{FILE_SIZE}} bytes</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="start-transfer" class="btn btn-primary">
+                    Accept and Download
+                </button>
+                <a href="/" class="btn btn-text">Cancel</a>
+            </div>
+
+            <div id="transfer-status" class="transfer-status hidden">
+                <h3>Transfer Status</h3>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="status-text">Connecting to sender...</p>
+            </div>
+
+            <div id="download-container" class="download-container hidden">
+                <h3>Transfer Complete!</h3>
+                <a id="download-link" class="btn btn-primary">Download File</a>
+            </div>
+        </div>
+
+        <script>
+            // Embed transfer ID for the WebSocket connection
+            const TRANSFER_ID = "{{TRANSFER_ID}}";
+        </script>
+        <script src="/static/receive.js"></script>
+    </body>
+</html>
